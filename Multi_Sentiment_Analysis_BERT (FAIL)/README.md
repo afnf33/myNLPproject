@@ -4,27 +4,24 @@
 
 <!-- code_chunk_output -->
 
-# KoBERT를 활용한 한국어 다중 감성 분류기
+# BERT를 활용한 영어 다중 감성 분류기
 
-BERT 모델을 사용한 한국어 자연어의 감성 분류는 대부분이 긍정-부정의 이진Binary 분류 (=극성Polarity 분류)에 한정되어 있습니다.
+현재까지의 한국어 자연어의 감성 분류는 대부분이 긍정-부정의 이진Binary 분류 (=극성Polarity 분류)에 한정되어 있습니다.
 하지만 실제 사람의 감정은 단순히 긍정-부정보다 다양한 분류를 가집니다.
 
-이를 위해 SKTBrain에서 개발한 pretrained [KoBERT](https://github.com/SKTBrain/KoBERT)를 다중 감성 분류에 적용해 보았습니다.
+이번 시도에서는 영어 자연어 처리를 위한 [BERT](https://github.com/google-research/bert) 모델을 활용했습니다.  
+한국어에 비해 영어 자연어 처리는 더 많은 자료와 더 높은 성능을 나타내기에 한국어->영어 번역 과정을 중간에 넣어 BERT를 사용하고자 하였습니다.
 
-### Requirements
-
-* Python >= 3.6
-* konlpy >= 0.5.2
-* PyTorch >= 1.1.0
-* MXNet >= 1.4.0
-* gluonnlp >= 0.6.0
-* sentencepiece >= 0.1.6
-* onnxruntime >= 0.3.0
-* transformers >= 2.1.1
+참고 자료:
+Google-research [BERT FineTuning with Cloud TPUs](https://colab.research.google.com/github/tensorflow/tpu/blob/master/tools/colab/bert_finetuning_with_cloud_tpus.ipynb)
+Renu Khandelwal [Multi-class Sentiment Analysis using BERT](https://towardsdatascience.com/multi-class-sentiment-analysis-using-bert-86657a2af156?gi=c537e046d9bc)
 
 ### Dataset
-한국어 감정 데이터는 [AI 허브](http://www.aihub.or.kr/)의 오픈 데이터 "한국어_단발성_대화_데이터"를 사용하였습니다.
+[EmoInt](https://saifmohammad.com/WebPages/EmotionIntensity-SharedTask.html)의 영어 감정 레이블링 데이터를 사용하였습니다.
 
+
+
+*****************************
 데이터 형태 
 |Sentence|Emotion|
 |------|:---:|
